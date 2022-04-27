@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:18:06 by elpastor          #+#    #+#             */
-/*   Updated: 2022/04/26 20:20:35 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/04/27 17:53:31 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	        *ft_strjoin(char const *s1, char const *s2);
 static size_t	countchar(char const *s, char c);
 static size_t   countword(char const *s, char c);
 char            **ft_split(char const *s, char c);
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 
 #endif

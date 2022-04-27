@@ -6,9 +6,11 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:10:16 by elpastor          #+#    #+#             */
-/*   Updated: 2022/04/26 20:10:55 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/04/27 17:50:32 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "pipex.h"
 
 size_t	ft_strlen(const char *s)
 {
