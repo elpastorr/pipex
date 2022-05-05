@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:53:04 by elpastor          #+#    #+#             */
-/*   Updated: 2022/05/03 17:57:35 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/05 18:56:03 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,4 @@ char	*get_path(char **env)
 	while (ft_strncmp("PATH", *env, 4))
 		env++;
 	return (*env + 5);
-}
-
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
-}
-
-void    ft_putstr(char *s)
-{
-    int i;
-
-    i = 0;
-    if (s)
-    {
-        while (s[i])
-            write(1, &s[i++], 1);
-    }
 }

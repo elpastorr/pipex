@@ -6,7 +6,7 @@
 #    By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/28 16:03:42 by elpastor          #+#    #+#              #
-#    Updated: 2022/04/28 16:25:33 by elpastor         ###   ########.fr        #
+#    Updated: 2022/05/05 19:06:55 by elpastor         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ HEADER = includes/
 
 SOURCES = pipex.c \
 		utils.c \
+		utils2.c \
 		get.c
 
 SRCS = $(addprefix $(DIR_S),$(SOURCES))
