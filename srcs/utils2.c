@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 18:54:50 by elpastor          #+#    #+#             */
-/*   Updated: 2022/05/05 19:09:23 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:43:53 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	return (s1[i] - s2[i]);
 }
 
-void    ft_putstr(char *s)
+void	ft_putstr(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s)
-        return ;
-    while (s[i])
-        write(1, &s[i++], 1);
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+		write(1, &s[i++], 1);
 }
 
 void	*ft_calloc(size_t count, size_t size)
@@ -42,7 +42,7 @@ void	*ft_calloc(size_t count, size_t size)
 	dst = malloc(count * size);
 	if (dst == NULL)
 		return (dst);
-    ft_bzero(dst, count * size);
+	ft_bzero(dst, count * size);
 	return (dst);
 }
 

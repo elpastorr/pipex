@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:18:06 by elpastor          #+#    #+#             */
-/*   Updated: 2022/05/05 19:09:45 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:59:19 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,22 @@ typedef struct s_env {
 	pid_t	pid2;
 }	t_env;
 
-void			ft_error(char *s);
 void			first_cmd(t_env *myenv, char **av, char **env);
 void			second_cmd(t_env *myenv, char **av, char **env);
+void			init_myenv(t_env *myenv, int ac, char **av, char **env);
 
 size_t			ft_strlen(const char *s);
 char			*ft_strjoin(char const *s1, char const *s2);
-// static size_t	countchar(char const *s, char c);
-// static size_t	countword(char const *s, char c);
 char			**ft_split(char const *s, char c);
-
 
 char			*get_cmd(char **paths, char *cmd);
 char			*get_path(char **env);
+void			ft_free(char *s, t_env *myenv);
+void			ft_error(char *s);
 
 int				ft_strncmp(char *s1, char *s2, unsigned int n);
 void			ft_putstr(char *s);
 void			*ft_calloc(size_t count, size_t size);
 void			ft_bzero(void *s, size_t n);
-
 
 #endif
