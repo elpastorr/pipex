@@ -6,7 +6,7 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:32:09 by elpastor          #+#    #+#             */
-/*   Updated: 2022/05/10 19:55:20 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:35:20 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ void	first_cmd(t_env *myenv, char **av, char **env)
 	if (myenv->infile != -1)
 		dup2(myenv->infile, 0);
 	else
+	{
+		myenv->pid1 = 1;
 		ft_free("Infile error\n", myenv);
+	}
 	myenv->cmd_args = ft_split(av[2], ' ');
 	myenv->cmd = get_cmd(myenv->paths, myenv->cmd_args[0]);
 	if (myenv->cmd == NULL)

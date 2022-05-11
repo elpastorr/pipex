@@ -6,15 +6,15 @@
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 20:10:16 by elpastor          #+#    #+#             */
-/*   Updated: 2022/04/28 16:26:58 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:05:29 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (s[i])
@@ -24,8 +24,8 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 	char	*dst;
 
 	if (!s1 || !s2)
@@ -43,40 +43,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (dst);
 }
 
-static size_t	countchar(char const *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
-}
-
-static size_t	countword(char const *s, char c)
-{
-	size_t	i;
-	size_t	count;
-
-	i = 0;
-	count = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (count);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int		i;
+	int		j;
+	int		k;
 	char	**str;
 
 	str = (char **)malloc(sizeof(char *) * (countword(s, c) + 1));
@@ -99,4 +70,33 @@ char	**ft_split(char const *s, char c)
 	}
 	str[j] = 0;
 	return (str);
+}
+
+int	countchar(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+
+int	countword(char const *s, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && s[i] != c)
+			i++;
+	}
+	return (count);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get.c                                              :+:      :+:    :+:   */
+/*   get_free.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elpastor <elpastor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 17:53:04 by elpastor          #+#    #+#             */
-/*   Updated: 2022/05/10 19:55:28 by elpastor         ###   ########.fr       */
+/*   Updated: 2022/05/11 13:00:25 by elpastor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ char	*get_path(char **env)
 	return (*env + 5);
 }
 
+void	ft_free2(t_env *myenv, int i)
+{
+	while (myenv->cmd_args[i])
+		free(myenv->cmd_args[i++]);
+	free(myenv->cmd_args);
+	i = 0;
+	while (myenv->paths[i])
+		free(myenv->paths[i++]);
+	free(myenv->paths);
+	free(myenv);
+}
+
 void	ft_free(char *s, t_env *myenv)
 {
 	int	i;
@@ -55,16 +67,7 @@ void	ft_free(char *s, t_env *myenv)
 		free(myenv);
 	}
 	else
-	{
-		while (myenv->cmd_args[i])
-			free(myenv->cmd_args[i++]);
-		free(myenv->cmd_args);
-		i = 0;
-		while (myenv->paths[i])
-			free(myenv->paths[i++]);
-		free(myenv->paths);
-		free(myenv);
-	}
+		ft_free2(myenv, i);
 	exit(0);
 }
 
