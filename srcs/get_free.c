@@ -32,7 +32,7 @@ char	*get_cmd(char **paths, char *cmd)
 
 char	*get_path(char **env)
 {
-	while (ft_strncmp("PATH", *env, 4))
+	while (*env && ft_strncmp("PATH", *env, 4))
 		env++;
 	return (*env + 5);
 }
